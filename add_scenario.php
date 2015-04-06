@@ -31,7 +31,7 @@
                 <input type="text" name="scenario_title" id="input_scenario_title" required>
             </p>
             <p>
-                <label for="scenarioDescription">Feature Description:</label>
+                <label for="scenarioDescription">Scenario Description:</label>
                 <input type="text" name="scenario_description" id="input_scenario_description">
             </p>
             <p>
