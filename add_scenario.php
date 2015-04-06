@@ -5,7 +5,7 @@
         <title>Add Scenario Form</title>
     </head>
     <body>
-        <form action="add_scenario.php" method="post">
+        <form action="insert_scenario.php" method="post">
             <p>
                 <label for="featureList">Feature:</label>
                 <?php
@@ -19,7 +19,6 @@
                         echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
                     }
                     echo "</select>";
-
                 ?>
             </p>
 
@@ -37,5 +36,8 @@
             </p>
             <input type="submit" value="Add Scenario">
         </form>
+        <p>
+            <a href="index.html">Home</a>
+        </p>
     </body>
 </html>

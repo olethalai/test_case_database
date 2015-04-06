@@ -5,7 +5,7 @@
         <title>Add Feature Form</title>
     </head>
     <body>
-        <form action="add_feature.php" method="post">
+        <form action="insert_feature.php" method="post">
             <p>
                 <label for="featureName">Feature:</label>
                 <input type="text" name="feature_name" id="input_feature_name" required>
@@ -16,5 +16,8 @@
             </p>
             <input type="submit" value="Add Feature">
         </form>
+        <p>
+            <a href="index.html">Home</a>
+        </p>
     </body>
 </html>
