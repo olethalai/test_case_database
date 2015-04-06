@@ -43,7 +43,8 @@ mysqli_close($link);
 
 <body>
   <p>
-    <a href="index.html">Home</a>
+    <a href="index.html">Home</a></br>
+    <a href="add_scenario.php">Add another scenario</a>
   </p>
 </body>
 
