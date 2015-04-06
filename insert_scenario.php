@@ -10,26 +10,27 @@ if($link === false){
 
 // Escape user inputs for security
 $feature_name = mysqli_real_escape_string($link, $_POST['feature_name']);
-$scenario_name = mysqli_real_escape_string($link, $_POST['scenario_name']);
+$scenario_name = mysqli_real_escape_string($link, $_POST['scenario_title']);
 $scenario_description = mysqli_real_escape_string($link, $_POST['scenario_description']);
 
 // Create scenario using feature ID
-$sql = "INSERT INTO scenario (title, description, feature_id) SELECT '$scenario_name' as title, '$scenario_description' as description, id as feature_id FROM feature WHERE name = '$feature_name')";
+$sql = "INSERT INTO scenario (title, description, feature_id) SELECT '$scenario_name' as title, '$scenario_description' as description, id as feature_id FROM feature WHERE name = '$feature_name'";
 if(mysqli_query($link, $sql)){
-    echo "Scenario record added successfully.";
+    echo "Scenario record added successfully.\n";
 } else{
     echo "ERROR: Could not execute $sql. " . mysqli_error($link);
 }
-$scenario_id = mysqli_insert_id();
+$scenario_id = mysqli_insert_id($link);
 
 // Then create steps using scenario ID
-// for each step...
-// $step =
-$sql = "INSERT INTO step (description, scenario_id) VALUES ('$step', $scenario_id)";
-if(mysqli_query($link, $sql)){
-    echo "Scenario record added successfully.";
-} else{
-    echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+$steps = explode("\n", $_POST['steps']);
+foreach ($steps as $step) {
+  $sql = "INSERT INTO step (description, scenario_id) VALUES ('$step', $scenario_id)";
+  if(mysqli_query($link, $sql)){
+      echo "Step record added successfully.\n";
+  } else{
+      echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+  }
 }
 
 // close connection

@@ -14,7 +14,7 @@
                     $sql = "SELECT name FROM feature";
                     $result = mysqli_query($link, $sql);
 
-                    echo "<select name='features' required>";
+                    echo "<select name='feature_name' id='input_feature_name' required>";
                     while ($row = mysqli_fetch_array($result)) {
                         echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
                     }
