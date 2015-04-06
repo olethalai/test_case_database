@@ -7,6 +7,9 @@
     <body>
         <form action="insert_scenario.php" method="post">
             <p>
+                <input type="reset" value="Reset form">
+            </p>
+            <p>
                 <label for="featureList">Feature:</label>
                 <?php
                     $link = mysqli_connect("localhost", "root", "", "blinkbox_iOS_test_suite");
@@ -15,6 +18,7 @@
                     $result = mysqli_query($link, $sql);
 
                     echo "<select name='feature_name' id='input_feature_name' required>";
+                    echo "<option disabled selected>-- Select a feature --</option>";
                     while ($row = mysqli_fetch_array($result)) {
                         echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
                     }
