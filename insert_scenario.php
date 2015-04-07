@@ -13,6 +13,8 @@ $feature_name = mysqli_real_escape_string($link, $_POST['feature_name']);
 $scenario_name = mysqli_real_escape_string($link, $_POST['scenario_title']);
 $scenario_description = mysqli_real_escape_string($link, $_POST['scenario_description']);
 
+echo "<p id='sql_outcome'>";
+
 // Create scenario using feature ID
 $sql = "INSERT INTO scenario (title, description, feature_id) SELECT '$scenario_name' as title, '$scenario_description' as description, id as feature_id FROM feature WHERE name = '$feature_name'";
 if(mysqli_query($link, $sql)){
@@ -32,6 +34,8 @@ foreach ($steps as $step) {
       echo "ERROR: Could not execute $sql. " . mysqli_error($link);
   }
 }
+
+echo "</p>";
 
 // close connection
 mysqli_close($link);

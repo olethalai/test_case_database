@@ -12,6 +12,8 @@ if($link === false){
 $feature_name = mysqli_real_escape_string($link, $_POST['feature_name']);
 $feature_description = mysqli_real_escape_string($link, $_POST['feature_description']);
 
+echo "<p id='sql_outcome'>";
+
 // attempt insert query execution
 $sql = "INSERT INTO feature (name, description) VALUES ('$feature_name', '$feature_description')";
 if(mysqli_query($link, $sql)){
@@ -19,6 +21,8 @@ if(mysqli_query($link, $sql)){
 } else{
     echo "ERROR: Could not execute $sql. " . mysqli_error($link);
 }
+
+echo "</p>";
 
 // close connection
 mysqli_close($link);

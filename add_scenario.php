@@ -38,7 +38,7 @@
                 <label for="steps">Steps:</label>
                 <textarea rows=7 cols=80 name="steps" id="input_steps" required></textarea>
             </p>
-            <input type="submit" value="Add Scenario">
+            <input type="submit" value="Add Scenario" id="submit_scenario">
         </form>
         <p>
             <a href="index.html">Home</a>

@@ -3,13 +3,19 @@ require_relative 'home_page'
 
 class AddFeatureOutcomePage < Page
 
-  def fail?
-    # TODO: Implement method
+  def goto_home_page
+    element = @driver.find_element(:link_text, 'Home')
+    element.click
+    HomePage.new(@driver)
   end
 
-  def goto_home_page
+  def fail?
+    sql_outcome_paragraph = @driver.find_element(:id, 'sql_outcome')
+    sql_outcome_paragraph.text.include?("ERROR")
+  end
+
+  def get_error
     # TODO: Implement method
-    HomePage.new(@driver)
   end
 
 end

@@ -14,7 +14,7 @@
                 <label for="featureDescription">Feature Description:</label>
                 <input type="text" name="feature_description" id="input_feature_description">
             </p>
-            <input type="submit" value="Add Feature">
+            <input type="submit" value="Add Feature" id="submit_feature">
         </form>
         <p>
             <a href="index.html">Home</a>

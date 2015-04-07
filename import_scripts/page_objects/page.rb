@@ -3,6 +3,7 @@ require 'selenium-webdriver'
 class Page
 
   def initialize(driver)
+    puts "Initialising #{self}..."
     @driver = driver
   end
 
