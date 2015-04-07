@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Add Scenario Form</title>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <form action="insert_scenario.php" method="post">

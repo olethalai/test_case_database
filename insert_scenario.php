@@ -1,3 +1,10 @@
+
+<html>
+
+<head>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -40,12 +47,6 @@ echo "</p>";
 // close connection
 mysqli_close($link);
 ?>
-<html>
-
-<head>
-</head>
-
-<body>
   <p>
     <a href="index.html">Home</a></br>
     <a href="add_scenario.php">Add another scenario</a>
