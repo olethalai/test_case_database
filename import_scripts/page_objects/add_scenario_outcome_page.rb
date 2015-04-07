@@ -21,7 +21,8 @@ class AddScenarioOutcomePage < Page
   end
 
   def get_error
-    # TODO: Implement method
+    sql_outcome_paragraph = @driver.find_element(:id, 'sql_outcome')
+    sql_outcome_paragraph.text
   end
 
 end

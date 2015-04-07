@@ -3,7 +3,7 @@ require_relative 'page_objects/home_page'
 require_relative 'data_objects/feature'
 require_relative 'data_objects/scenario'
 
-path_to_feature_file = ENV['FEATURE'] || '../features/test.feature'
+path_to_feature_file = ENV['FEATURE'] || 'features/test.feature'
 
 feature = Feature.new(path_to_feature_file)
 

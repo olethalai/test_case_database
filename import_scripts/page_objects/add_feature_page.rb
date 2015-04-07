@@ -9,12 +9,11 @@ class AddFeaturePage < Page
   end
 
   def add_feature(feature)
-    name_text_box = @driver.find_element(:id, 'input_feature_name')
     description_text_box = @driver.find_element(:id, 'input_feature_description')
-    submit_button = @driver.find_element(:id, 'submit_feature')
-
-    name_text_box.send_keys(feature.name)
     description_text_box.send_keys(feature.description)
+    name_text_box = @driver.find_element(:id, 'input_feature_name')
+    name_text_box.send_keys(feature.name)
+    submit_button = @driver.find_element(:id, 'submit_feature')
     submit_button.click
 
     AddFeatureOutcomePage.new(@driver)
