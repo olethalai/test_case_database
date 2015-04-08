@@ -16,7 +16,7 @@ class Feature
     while !this_line.match /Feature: /
       this_line = feature_file.gets
     end
-    @name = this_line.strip
+    @name = this_line.strip.gsub("Feature: ", "")
 
     # Find the description, if there is one
     @description = ''
@@ -25,7 +25,7 @@ class Feature
       @description += this_line
       this_line = feature_file.gets
     end
-    @description = @description.strip
+    @description = @description.strip.gsub("Scenario: ", "")
 
     feature_file.close
   end
